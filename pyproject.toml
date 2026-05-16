@@ -1,0 +1,33 @@
+[project]
+name = "ocr-clipboard"
+version = "0.0.1a"
+description = "OCR clipboard tool"
+readme = "README.rst"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+keywords = ["ocr", "clipboard"]
+
+authors = [
+  {name = "userElaina", email = "userelaina@pm.me" }
+]
+maintainers = [
+  {name = "userElaina", email = "userelaina@pm.me" }
+]
+
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3"
+]
+
+dependencies = [
+  "pillow==9.4.0", "numpy", "easyocr", "keyboard"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/userElaina/ocr-clipboard"
+"Bug Reports" = "https://github.com/userElaina/ocr-clipboard/issues"
+"Source" = "https://github.com/userElaina/ocr-clipboard"
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
