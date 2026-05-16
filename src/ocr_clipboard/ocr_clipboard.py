@@ -1,5 +1,4 @@
 import time
-import platform
 import keyboard
 import numpy as np
 from PIL import ImageGrab
