@@ -29,7 +29,7 @@ _ocr = ALL_API[0]
 ZH_PATTERN = r'[\u4e00-\u9fa5]+'
 
 
-def ocr_1(f=_ocr) -> list:
+def ocr_0(f=_ocr) -> list:
     for _ in range(50):
         img = ImageGrab.grabclipboard()
         if img is not None:
@@ -39,6 +39,20 @@ def ocr_1(f=_ocr) -> list:
         return None
     data = np.array(img)
     return [s for idx, s, acc in f(data)]
+
+
+def ocr_1(f=_ocr) -> list:
+    # print('[get img...]')
+    l = ocr_0(f)
+    if l is None:
+        print('No image found in clipboard.')
+        return
+
+    # print('[ocr:]')
+    if not l:
+        print('No text found in image.')
+        return
+    print('\n'.join(l))
 
 
 def ocr_cycle(f=_ocr) -> None:
@@ -55,19 +69,8 @@ def ocr_cycle(f=_ocr) -> None:
 
         print('[Meta Shift S]')
         time.sleep(5)
-
-        # print('[get img...]')
-        l = ocr_1(f)
-        if l is None:
-            print('No image found in clipboard.')
-            continue
-
-        # print('[ocr:]')
-        if not l:
-            print('No text found in image.')
-            continue
-        print('\n'.join(l))
-        print()
+        ocr_1(f)
+        print('[done; waiting for next...]')
 
 
 if __name__ == '__main__':
