@@ -1,6 +1,6 @@
 [project]
 name = "ocr-clipboard"
-version = "0.0.1a"
+version = "0.0.1a1"
 description = "OCR clipboard tool"
 readme = "README.rst"
 requires-python = ">=3.9"
